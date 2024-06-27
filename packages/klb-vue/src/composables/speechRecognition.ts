@@ -67,8 +67,8 @@ export function useSpeechRecognition(
   };
 
   const stopRecording = () => {
-    recognition.stop();
     if (silenceTimeout) {
+      recognition.stop();
       clearTimeout(silenceTimeout);
       silenceTimeout = null;
     }
