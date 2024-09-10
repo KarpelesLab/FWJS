@@ -88,22 +88,6 @@ function createKLB(): Plugin {
   };
 }
 
-declare module "vue" {
-  export interface ComponentCustomProperties {
-    $t: typeof i18next.t;
-    $eventBus: Emitter<Events>;
-    $cropText: typeof cropText;
-    $formatBytes: typeof formatBytes;
-    $formatTimeago: typeof formatTimeago;
-    $formatDatetime: typeof formatDatetime;
-    $formatDate: typeof formatDate;
-    $formatRecurringPaymentCycle: typeof formatRecurringPaymentCycle;
-  }
-  export interface GlobalComponents {
-    ClientOnly: typeof ClientOnly;
-  }
-}
-
 export {
   i18nextPromise,
   useTranslation,
