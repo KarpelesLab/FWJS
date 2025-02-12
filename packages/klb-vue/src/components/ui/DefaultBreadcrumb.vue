@@ -31,9 +31,11 @@ withDefaults(
       <!-- Separator Icon: Display for all items except the first -->
       <ChevronRightIcon
         v-if="index !== 0"
-        :class="index === 0 
-          ? 'w-4 h-4 mr-2 inline-block' 
-          : 'w-5 h-5 text-fv-neutral-400 inline-block mx-0.5 md:mx-1.5'"
+        :class="
+          index === 0
+            ? 'w-4 h-4 mr-2 inline-block'
+            : 'w-5 h-5 text-fv-neutral-400 inline-block mx-0.5 md:mx-1.5'
+        "
       />
 
       <!-- If the breadcrumb has a link -->
@@ -41,16 +43,20 @@ withDefaults(
         <router-link
           :to="item.to"
           itemprop="item"
-          :class="index === 0 
-            ? 'text-xs font-medium text-fv-neutral-700 hover:text-fv-neutral-900 dark:text-fv-neutral-200 dark:hover:text-white' 
-            : 'text-xs font-medium text-fv-neutral-700 hover:text-fv-neutral-900 dark:text-fv-neutral-200 dark:hover:text-white'"
+          :class="
+            index === 0
+              ? 'text-xs font-medium text-fv-neutral-700 hover:text-fv-neutral-900 dark:text-fv-neutral-200 dark:hover:text-white'
+              : 'text-xs font-medium text-fv-neutral-700 hover:text-fv-neutral-900 dark:text-fv-neutral-200 dark:hover:text-white'
+          "
         >
           <!-- Optionally display a home icon if showHome is true for the first item -->
           <template v-if="showHome && index === 0">
             <HomeIcon
-              :class="index === 0 
-                ? 'w-4 h-4 mr-2 inline-block' 
-                : 'w-4 h-4 text-fv-neutral-400 inline-block mx-0.5 md:mx-1.5'"
+              :class="
+                index === 0
+                  ? 'w-4 h-4 mr-2 inline-block'
+                  : 'w-4 h-4 text-fv-neutral-400 inline-block mx-0.5 md:mx-1.5'
+              "
             />
           </template>
           <span itemprop="name">{{ item.name }}</span>
